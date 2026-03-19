@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Terabit - Modular</title>
+    <link rel="stylesheet" href="estilos_globales.css">
+</head>
+<body>
+    <div id="app-shell">
+        <header id="header-slot">Cargando menú...</header>
+        
+        <main id="main-slot">
+            <div class="welcome">
+                <h1>Bienvenido a Mundo Terabit</h1>
+                <p>Selecciona un módulo para empezar</p>
+                <div class="menu-temporal">
+                    <button onclick="cargarModulo('tienda')">Ir a Tienda</button>
+                    <button onclick="cargarModulo('chat')">Ir a Chat</button>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer-slot">Pie de página listo</footer>
+    </div>
+
+    <script src="shell.js" type="module"></script>
+</body>
+</html>
