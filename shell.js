@@ -38,3 +38,21 @@ export async function cargarModulo(nombre) {
 }
 
 window.cargarModulo = cargarModulo;
+
+// ----------js el primero si funcioa el segundo la imajentera no funcieona 
+// 1. Seleccionamos los elementos de la página
+const botonHome = document.getElementById('btn-home');
+const slotDinamico = document.getElementById('header-dynamic-slot');
+const mainLayout = document.querySelector('.layout');
+
+// 2. Definimos la función que se activa al hacer CLIC
+botonHome.onclick = function() {
+    mainLayout.classList.toggle('sidebar-abierto');
+
+    // Inyectamos un DIV con una clase específica
+    slotDinamico.innerHTML = `
+        <div class="logo-terabit-container">
+            <img src="css/img/tera.png" alt="Terabit Logo">
+        </div>
+    `;
+};

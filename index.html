@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Terabit - Modular</title>
-    <link rel="stylesheet" href="estilos_globales.css">
+    <link rel="stylesheet" href="css/estilos_globales.css">
 </head>
-<body>
-    <div id="app-shell">
-        <header id="header-slot">Cargando menús...</header>
-        
-        <main id="main-slot">
-            <div class="welcome">
-                <h1>Bienvenido a Mundo Terabit</h1>
-                <p>Selecciona un módulo para empezar</p>
-                <div class="menu-temporal">
-                    <button onclick="cargarModulo('tienda')">Ir a Tienda</button>
-                    <button onclick="cargarModulo('chat')">Ir a Chat</button>
-                </div>
-            </div>
-        </main>
+<body >
+<section class="layout">
+  <header class="header">
+  <!-- 🏠 CAJA 1: El botón que nunca cambia -->
+  <div class="header-fixed">
+    <button id="btn-home" class="menu-temporal-button"></button>
+</div>
+  <!-- 🎨 CAJA 2: El espacio que llenará tu JS -->
+  <div id="header-dynamic-slot" class="header-dynamic">
+    <!-- Aquí JS meterá el menú de ventas, perfil, etc. -->
+  </div>
+</header>
+   
+<aside id="sidebar-amigos" class="sidebar">
+    <h3>Amigos</h3>
+    <ul>
+      <li>Amigo 1</li>
+      <li>Amigo 2</li>
+    </ul>
+  </aside>
 
-        <footer id="footer-slot">Pie de página listo</footer>
+  <main class="main">
+    <div id="main-slot">
+      <!-- Aquí va tu contenido principal -->
     </div>
+  </main>
+
+  <footer class="footer">
+    <div id="widget-footer">Pie de página</div>
+  </footer>
+</section>
 
     <script src="shell.js" type="module"></script>
 </body>
