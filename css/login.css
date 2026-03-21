@@ -1,95 +1,68 @@
-/* ----------------------------------
-   🎨 ESTILOS EXCLUSIVOS DEL LOGIN
----------------------------------- */
+/* login.css - MUNDO LOGIN PRO */
 
-/* Contenedor del Formulario en el Header */
-.header-login-form {
+/* 📐 1. ESTRUCTURA (Layout) */
+.layout-login {
+    display: grid;
+    grid-template-rows: 80px 1fr 40px; /* Header 80, Main flexible, Footer 40 */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 🧱 2. CONTENEDOR DEL HEADER (Alineación) */
+#header-slot.header-azul {
+    grid-area: header;
+    background: rgba(0, 0, 90, 0.3); /* Tu azul/rojo transparente */
+    border-bottom: 2px solid #07dde9;
     display: flex;
     align-items: center;
-    gap: 12px;
     padding: 0 15px;
-    height: 100%;
+    gap: 10px;
+    z-index: 100;
 }
 
-/* Inputs minimalistas para el Header */
-.input-header {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(7, 221, 233, 0.5); /* Tu color cian con transparencia */
-    color: #07dde9;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    width: 110px;
+/* 📥 3. EL GRUPO DE INPUTS (La Cápsula) */
+
+/* 📥 2. El grupo de Inputs (Cápsulas) */
+.form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px; 
+    flex-grow: 1;
+    justify-content: flex-end; /* Los pega a la derecha */
+}
+
+.form-header input {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(7, 221, 233, 0.5) !important;
+    color: #07dde9 !important;
+    padding: 5px 8px !important;
+    border-radius: 20px !important;
+    font-size: 11px;
+    
+    /* 🚀 EL SECRETO: Ancho flexible */
+    width: 80px; 
+    min-width: 60px; /* Se encogen si el celular es muy angosto */
     outline: none;
-    transition: 0.3s;
 }
 
-.input-header:focus {
-    border-color: #07dde9;
-    box-shadow: 0 0 8px rgba(7, 221, 233, 0.4);
-}
-
-/* Botón Login Resaltado */
-.btn-login-mini {
-    background: #07dde9;
-    color: #000;
-    border: none;
-    padding: 6px 15px;
+/* 🚀 EL BOTÓN LOGEAR */
+.btn-logear {
+    background: #07dde9 !important;
+    color: #000 !important;
+    border: none !important;
+    padding: 5px 12px;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    flex-shrink: 0; /* 🚫 Evita que el botón se aplaste */
 }
-
-.btn-login-mini:hover {
-    transform: scale(1.05);
+.btn-logear:hover {
     box-shadow: 0 0 12px #07dde9;
-}
-
-/* Barra de Chat en el Footer */
-
-/*------------*/
-/* 💬 CONTENEDOR DEL CHAT EN EL FOOTER */
-.footer-chat-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-    gap: 15px;
-}
-
-/* ✍️ EL INPUT DONDE ESCRIBES */
-.input-chat {
-    flex-grow: 1;
-    background: transparent !important; /* 🚀 ¡EL !IMPORTANT ES CLAVE! Quita el fondo blanco */
-    border: none !important;            /* Quita el borde gris de cuadro */
-    color: white;                       /* Letra blanca para que se vea en el cian */
-    font-size: 16px;
-    outline: none;                      /* Quita el borde azul al hacer clic */
-    padding: 10px;
-    width: 100%;
-}
-
-/* 🎨 Cambia el color del texto "Escribe al agente..." */
-.input-chat::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* 🚀 EL BOTÓN DEL AVIONCITO / MICRO */
-.btn-accion-chat {
-    background: none;
-    border: none;
-    font-size: 22px;        /* Un poco más grande para que se vea bien */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease, color 0.3s;
-    color: white;           /* Empieza blanco (micrófono) */
-}
-
-.btn-accion-chat:hover {
-    transform: scale(1.2);  /* Crece un poquito al pasar el mouse */
+    transform: scale(1.05);
 }

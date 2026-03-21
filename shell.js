@@ -1,16 +1,23 @@
 // shell.js
-// shell.js
-import { renderizarLogin } from './login.js';
+import { iniciarBienvenida } from './bienvenida.js';
 
-const botonHome = document.getElementById('btn-home');
+// 🧼 Función para montar el escenario que el mundo pida
+export function montarEscenario(htmlLayout) {
+    const contenedor = document.getElementById('layout-container');
+    contenedor.innerHTML = ""; // Limpieza total de mundos anteriores
+    contenedor.innerHTML = htmlLayout;
 
-// 🏁 PRIMERA INSTANCIA: El Shell escucha para traer el Login
-botonHome.onclick = () => {
-    console.log("Shell: Iniciando primer acceso al Login...");
-    renderizarLogin(); 
+    // Retornamos los slots para que el mundo sepa dónde "pintar"
+    return {
+        header: document.getElementById('header-slot'),
+        main: document.getElementById('main-slot'),
+        footer: document.getElementById('footer-slot'),
+        btnHome: document.getElementById('btn-home')
+    };
+}
+
+// 🚀 Al iniciar la Web, cargamos el primer mundo: BIENVENIDA
+window.onload = () => {
+     console.log("Shell: Cargando mundo inicial...");
+    iniciarBienvenida();
 };
-
-// 💉 INYECTORES (Las herramientas para que las vistas pinten)
-export function actualizarHeader(html) { document.getElementById('header-dynamic-slot').innerHTML = html; }
-export function actualizarMain(html) { document.getElementById('main-slot').innerHTML = html; }
-export function actualizarFooter(html) { document.getElementById('footer-slot').innerHTML = html; }

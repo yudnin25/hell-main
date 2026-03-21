@@ -19,24 +19,6 @@ body, html {
     grid-template-areas: "main";
 }
 
-/* ----------losglill----------------*/
-.layout {
-  display: grid;
-  /* 🚀 CAMBIO CLAVE: 'auto' hace que la fila mida lo que mida su contenido */
-  grid-template-rows: auto 1fr auto; 
-  grid-template-columns: auto 1fr;
-  grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "footer footer";
-  height: 100vh;
-  background-color: #21c4ff33;
-}
-
-/* 🏠 Cuando añadimos esta clase con JS, el sidebar crece y empuja */
-.layout.sidebar-abierto {
-  grid-template-columns: 80px 1fr; 
-}
 /* ----------header----------------*/
 .header {
   grid-area: header; /* ⬅️ Le dice al Grid dónde ir */
@@ -73,22 +55,6 @@ body, html {
   box-shadow: 0 2px 4px #07dde9; /* Sombra para que resalte */
   transition: transform 0.2s;
 }
-
-.menu-temporal-button:hover {
-  transform: scale(1.1);      /* ✨ Crece un poquito al pasar el mouse */
-}
-/* ----------heder dinamico ----------------*/
-.header-dynamic {
-   justify-content: center;
-  align-items: center;
-  flex-grow: 1;          /* 🚀 Esto hace que la caja dinámica use TODO el espacio restante */
-  display: flex;
-  justify-content: flex-start; /* Alinea el contenido de JS a la izquierda también */
-   height: auto;
-max-width: 500px;  
-margin: 0 auto;
-}
-
 /* ----------------costado e buscar amigso--------------*/
 .sidebar {
   grid-area: sidebar;
@@ -98,7 +64,11 @@ margin: 0 auto;
   transition: width 0.3s; /* 🚀 Efecto de deslizamiento suave */
   border-right: 1px solid #444;
 }
-
+/* ----------lcostado---------------*/
+/* 🏠 Cuando añadimos esta clase con JS, el sidebar crece y empuja */
+.layout.sidebar-abierto {
+  grid-template-columns: 80px 1fr; 
+}
 /* Esta clase la pondremos con JS para abrirla */
 .sidebar.abierto {
   width: 250px;       /* Al abrirse, mide 250px y EMPUJA al main */
@@ -114,7 +84,7 @@ margin: 0 auto;
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-    background: #f4f4f4;
+    
 }
 /*-----------foter------------------------*/
 .footer {
@@ -142,39 +112,10 @@ margin: 0 auto;
   font-size: 12px;
   text-transform: uppercase; /* Opcional: letras en mayúsculas para estilo Pro */
 }
-
-
 #footer-slot {
     background: transparent !important; /* 🚀 CAMBIO CLAVE: Cámbialo a transparente */
     border-top: 1px solid #0cc; /* Esta es tu línea cian, déjala así */
     
     padding: 1rem;
     text-align: center;
-}
-
-/* FOOTER TOOLBAR */
-.widget-footer {
-    padding: 15px 20px;
-    background: rgb(36 49 97 / 21%);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    flex-shrink: 0;
-    /* 🛡️ Evitar que el footer suba o se colapse */
-}
-/*-----------parapasr a su propio css de slider heder------------------------*/
-.logo-terabit-container {
-    width: 100%;             /* Ocupa el ancho del slot */
-    height: 100%;            /* Ocupa el alto del header rojo */
-    display: flex;
-    align-items: center;     /* Centra el logo verticalmente */
-    justify-content: center; /* Centra el logo horizontalmente */
-    padding: 5px;            /* Un poco de espacio para que no toque los bordes */
-}
-
-.logo-terabit-container img {
-    max-height: 100%;        /* 🚀 Evita que el logo sea más alto que el header */
-    max-width: 100%;         /* Evita que se salga por los lados */
-    object-fit: contain;     /* Mantiene la proporción sin deformar */
 }

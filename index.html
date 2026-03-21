@@ -5,39 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Terabit - Modular</title>
     <link rel="stylesheet" href="css/estilos_globales.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="estilos_globales.css">
+    <link rel="stylesheet" href="bienvenida.css"> <!-- ⬅️ Conectarlo aquí -->
+    <link rel="stylesheet" href="css/login.css"> 
 </head>
-<body >
-<section class="layout">
-  <header class="header">
-  <!-- 🏠 CAJA 1: El botón que nunca cambia -->
-  <div class="header-fixed">
-    <button id="btn-home" class="menu-temporal-button"></button>
-</div>
-  <!-- 🎨 CAJA 2: El espacio que llenará tu JS -->
-  <div id="header-dynamic-slot" class="header-dynamic">
-    <!-- Aquí JS meterá el menú de ventas, perfil, etc. -->
-  </div>
-</header>
-   
-<aside id="sidebar-amigos" class="sidebar">
-    <h3>Amigos</h3>
-    <ul>
-      <li>Amigo 1</li>
-      <li>Amigo 2</li>
-    </ul>
-  </aside>
-
-  <main class="main">
-    <div id="main-slot">
-      <!-- Aquí va tu contenido principal -->
-    </div>
-  </main>
-
-  <footer class="footer">
-      <div id="footer-slot">Pie de página</div> 
-  </footer>
-</section>
+</head>
+<body id="app-root">
+    <!-- El fondo cian y la estructura base viven aquí -->
+    <div id="layout-container"></div>
 
     <script src="shell.js" type="module"></script>
 </body>
