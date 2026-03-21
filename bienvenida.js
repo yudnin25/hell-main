@@ -42,7 +42,7 @@ export function iniciarBienvenida() {
 
         <div class="presentacion-box">
         
-       <div id="panorama" style="width: 100%; height: 100vh;"></div>
+       <div id="panorama" style="width: 100%; height: 500px;"></div>
 
             <h1>Bienvenido a Terabit</h1>
             <p>Tu plataforma de Chat, Tiendas e Inteligencia Artificial.</p>
