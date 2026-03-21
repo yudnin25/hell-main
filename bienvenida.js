@@ -44,9 +44,6 @@ export function iniciarBienvenida() {
         
        <div id="panorama" style="width: 100%; height: 500px;"></div>
 
-            <h1>Bienvenido a Terabit</h1>
-            <p>Tu plataforma de Chat, Tiendas e Inteligencia Artificial.</p>
-            <button class="btn-entrar" id="btn-entrar-sistema">ENTRAR AL SISTEMA</button>
         </div>
     `;
     // ✨ 6. TEXTO DEL FOOTER
