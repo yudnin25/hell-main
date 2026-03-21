@@ -57,7 +57,7 @@ setTimeout(() => {
         "type": "equirectangular",
         "panorama": "css/img/images.webp", // Asegúrate que la ruta sea correcta
         "autoLoad": true,
-        "autoRotate": "anonymous" 
+        "autoRotate": -2
     });
 }, 100); // El pequeño retraso asegura que el HTML ya exista en la pantalla
     // ⚡ 7. LÓGICA DE NAVEGACIÓN (LOS DISPARADORES)
