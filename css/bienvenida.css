@@ -74,7 +74,8 @@
 /* 📝 3. CUERPO CENTRAL (Presentación) */
 .main-content {
     grid-area: main;
-    display: flex;
+  
+/* display flex*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -129,4 +130,24 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     flex-shrink: 0;
     /* 🛡️ Evitar que el footer suba o se colapse */
+}
+/*----------------------------------------------------*/
+.visor-360 {
+  width: 100%;       /* Ancho de tu pantalla */
+  height: 500px;     /* Altura del visor */
+  overflow-x: auto;  /* Permite el scroll horizontal */
+  overflow-y: hidden;
+  cursor: grab;      /* Cambia el cursor a una mano */
+  display: flex;
+}
+
+.visor-360 img {
+  height: 100%;      /* Ajusta la imagen a la altura del visor */
+  width: auto;       /* El ancho se estira (calidad 4K) */
+  object-fit: cover;
+}
+
+/* Ocultar la barra de scroll para que se vea profesional */
+.visor-360::-webkit-scrollbar {
+  display: none;
 }
