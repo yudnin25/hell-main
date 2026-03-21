@@ -6,10 +6,19 @@ body, html {
   background-attachment: fixed; /* Para que el fondo no se mueva al hacer scroll */
   margin: 0;
 }
-.fondo {
-    background-image: url(../img/2.jpg);
-    
+/*-------Cuando esta clase esté activa, el Header y el Footer desaparecen---- */
+.modo-producto .header, 
+.modo-producto .footer,
+.modo-producto .sidebar {
+    display: none !important;
 }
+
+/* Ajustamos el Main para que ocupe TODA la pantalla */
+.modo-producto .layout {
+    grid-template-rows: 1fr; /* El Grid ahora solo tiene una fila gigante */
+    grid-template-areas: "main";
+}
+
 /* ----------losglill----------------*/
 .layout {
   display: grid;
@@ -109,18 +118,37 @@ margin: 0 auto;
 }
 /*-----------foter------------------------*/
 .footer {
-  grid-area: footer;
-  background-color: #1a1a1a;
-  color: white;
+  grid-area: footer; /* Se mantiene anclado al fondo del Grid */
+
+  /* 🚫 SIN FONDO NI CURVAS */
+  background-color: transparent !important;
+  border-radius: 0; /* 🚀 ESTO QUITA TODA CURVA: queda recto */
+
+  /* ✨ EL REMARCADO: Línea fina arriba */
+  /* Puedes subir el 2px a 3px si quieres que brille más */
+  border-top: 2px solid #07dde9; 
+
+  /* 📏 Tamaño y Alineación */
+  height: 35px; 
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* 🪄 BRILLO NEÓN: Para que la línea resalte sobre el fondo oscuro */
+  box-shadow: 0px -5px 15px rgba(7, 221, 233, 0.3);
+  
+  /* Color del texto igual al de la línea para que combine */
+  color: #07dde9; 
+  font-size: 12px;
+  text-transform: uppercase; /* Opcional: letras en mayúsculas para estilo Pro */
 }
 
+
 #footer-slot {
-    background: #eee;
+    background: transparent !important; /* 🚀 CAMBIO CLAVE: Cámbialo a transparente */
+    border-top: 1px solid #0cc; /* Esta es tu línea cian, déjala así */
+    
     padding: 1rem;
-    border-top: 1px solid #ccc;
     text-align: center;
 }
 
