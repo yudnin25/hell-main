@@ -55,7 +55,7 @@ export function iniciarBienvenida() {
 setTimeout(() => {
     pannellum.viewer('panorama', {
         "type": "equirectangular",
-        "panorama": "css/img/tienda1.jpg", // Asegúrate que la ruta sea correcta
+        "panorama": "css/img/gato.jpg", // Asegúrate que la ruta sea correcta
         "autoLoad": true,
         "autoRotate": -2
     });
